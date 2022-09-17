@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Paper Scissors</title>
+    <link rel="icon" href="rock-paper-scissors.png" />
+    <link rel="stylesheet" href="StonePaperScissors.css">
+    <script src="https://kit.fontawesome.com/34c33fb8d8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Source+Sans+Pro:wght@200&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="flex-center">
+    <div class="container flex-center">
+        <div class="top flex-center">
+            <h1 id="heading">Start</h1>
+            <h1 id="chances">Chance</h1>
+        </div>
+        <div class="middle flex-center">
+            <div class="left flex-center">
+                <i class="fa-solid fa-hand-back-fist leftIcons " id="leftRock"></i>
+                <i class="fa-solid fa-hand leftIcons " id="leftPaper"></i>
+                <i class="fa-solid fa-hand-scissors leftIcons " id="leftScissors"></i>
+            </div>
+            <div class="center flex-center">
+                <h6 id="RoundResult"></h6>
+                <i class="fa-solid fa-greater-than " id="centerGreater"></i>
+                <i class="fa-solid fa-less-than " id="centerSmaller"></i>
+                <i class="fa-solid fa-equals " id="centerEqual"></i>
+            </div>
+            <div class="right flex-center">
+                <i class="fa-solid fa-hand-back-fist rightIcons " id="rightRock"></i>
+                <i class="fa-solid fa-hand rightIcons " id="rightPaper"></i>
+                <i class="fa-solid fa-hand-scissors rightIcons " id="rightScissors"></i>
+            </div>
+        </div>
+        <div class="bottom IconBtns flex-center">
+            <div class="iconContainer ">
+                <i class="fa-solid fa-hand-back-fist bottomIcons " id="bottomRock"></i>
+                <i class="fa-solid fa-hand bottomIcons " id="bottomPaper"></i>
+                <i class="fa-solid fa-hand-scissors bottomIcons " id="bottomScissors"></i>
+            </div>
+        </div>
+        <div class="footer flex-center">
+            <div class="flex-center" id="YourScore">You Score</div>
+            <div class="flex-center" id="result">Let's Go!</div>
+            <div class="flex-center" id="ComScore">Comp Score</div>
+        </div>
+    </div>
+    <script src="StonePaperScissors.js"></script>
+</body>
+
+</html>
