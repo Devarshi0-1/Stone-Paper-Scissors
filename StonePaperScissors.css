@@ -38,13 +38,9 @@
 }
 
 body {
-    background-image: url('back.jpg');
-    background-image: url('https://source.unsplash.com/random/1920x1080');
-    background-size: cover;
-
     height: 100vh;
     width: 100vw;
-    /* background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59); */
+    background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
 }
 
 .container {
