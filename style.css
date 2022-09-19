@@ -1,9 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Source Sans Pro', sans-serif;
-    transition-duration: 500ms;
+    font-family: 'Poppins', sans-serif;
 }
 
 @keyframes headingAnimation {
@@ -20,20 +18,6 @@
     100% {
         transform: translate(0%, 0%) rotate(0deg);
         letter-spacing: 0.1em;
-    }
-}
-
-@keyframes RockAnimation {
-    0% {
-        transform: translate(0%, -300%);
-    }
-
-    80% {
-        transform: translate(0%, 50%);
-    }
-
-    100% {
-        transform: translate(0%, 0%);
     }
 }
 
@@ -89,6 +73,15 @@ body {
     color: rgba(255, 255, 255, 0.705);
 }
 
+.middleIcons {
+    width: 150px;
+    position: absolute;
+    user-select: none;
+    fill: white;
+    transition: opacity 200ms;
+    opacity: 0;
+}
+
 .left {
     width: 24vw;
     height: 100%;
@@ -99,13 +92,9 @@ body {
     height: 100%;
 }
 
-.center .fa-solid {
-    position: absolute;
-    opacity: 0;
-}
-
-#RoundResult {
-    position: absolute;
+.centerIcons {
+    width: 100px;
+    fill: rgba(255, 255, 255, 0.3);
 }
 
 .right {
@@ -113,22 +102,9 @@ body {
     height: 100%;
 }
 
-.left .fa-solid {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.right .fa-solid {
-    position: absolute;
-    opacity: 0;
-}
-
 .bottom {
     height: 24vh;
     width: 100%;
-    color: #F473B9;
-    text-shadow: 5px 5px 10px black;
 }
 
 .iconContainer {
@@ -138,34 +114,39 @@ body {
     justify-content: space-between;
 }
 
-.IconBtns {
-    font-size: 60px;
-}
-
-.IconBtns i {
+.bottomIcons {
+    width: 60px;
     cursor: pointer;
+    user-select: none;
+    fill: #F473B9;
+    filter: drop-shadow(5px 5px 10px black);
+    transition: fill 100ms, transform 200ms;
 }
 
-.bottom .fa-solid:hover {
+.bottomIcons:hover {
     transform: translateY(-20px);
 }
 
-.bottom .fa-solid:active {
-    color: rgb(173, 23, 211);
+.bottomIcons:active {
+    fill: rgb(173, 23, 211);
 }
 
 .footer {
     width: 54vw;
+    font-size: 2rem;
 }
 
 #YourScore,
-#result,
 #ComScore {
     width: 24vw;
-    font-size: 3em;
 }
 
-#result {
+#reset {
+    height: 62px;
+    width: 199px;
+    padding: 6px 17px;
+    font-size: 2rem;
+    background-color: transparent;
     cursor: pointer;
 }
 
@@ -173,10 +154,4 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.fa-less-than,
-.fa-greater-than,
-.fa-equals {
-    color: rgba(0, 0, 0, 0.075);
 }
