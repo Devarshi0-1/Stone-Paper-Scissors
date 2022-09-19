@@ -5,6 +5,7 @@ const mainBtns = [...document.querySelectorAll('.bottomIcons')]
 const userIcons = [...document.querySelectorAll('.leftIcons')]
 const computerIcons = [...document.querySelectorAll('.rightIcons')]
 const resetBtn = document.querySelector('#reset ')
+const circles = document.querySelectorAll('.circles')
 let userScore = 0
 let compScore = 0
 
@@ -150,6 +151,9 @@ function modeSwitch() {
     body.classList.toggle('dark')
     switchingElementFontColor.forEach(element => {
         element.classList.toggle('dark')
+    })
+    circles.forEach(circle => {
+        circle.classList.toggle('dark')
     })
     colorModeBtn.classList.toggle('colorModeToggle')
     colorModeSlider.classList.toggle('colorModeToggle')

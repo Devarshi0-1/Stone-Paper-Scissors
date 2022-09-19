@@ -57,6 +57,7 @@ body {
 }
 
 .container {
+    position: relative;
     flex-direction: column;
     height: 77vh;
     width: 75vw;
@@ -179,21 +180,32 @@ body.dark {
     border-color: white;
 }
 
-.circles{
+.dark#circle1 {
+    top: 600px;
+    left: 100px;
+}
+
+.dark#circle2 {
+    bottom: 550px;
+    right: 150px;
+}
+
+.circles {
     position: absolute;
     aspect-ratio: 1;
     border-radius: 50%;
     z-index: -1;
     background-color: rgba(0, 69, 119, 0.226);
+    transition: top 500ms ease-in-out, bottom 500ms ease-in-out;
 }
 
-#circle1{
+#circle1 {
     top: 200px;
     left: 100px;
     width: 300px;
 }
 
-#circle2{
+#circle2 {
     bottom: 200px;
     right: 150px;
     width: 200px;
