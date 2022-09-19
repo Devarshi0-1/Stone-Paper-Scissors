@@ -14,11 +14,6 @@ mainBtns.forEach(btn => {
     })
 });
 
-resetBtn.addEventListener('click', () => {
-    userScore = 0
-    compScore = 0
-    updateScores()
-})
 
 const LeftRock = document.querySelector('.leftIcons:nth-child(1)')
 const LeftPaper = document.querySelector('.leftIcons:nth-child(2)')
@@ -124,3 +119,20 @@ function updateScores() {
         computerScore.innerText = `Comp Score`
     }
 }
+
+resetBtn.addEventListener('click', () => {
+    userScore = 0
+    compScore = 0
+    LeftRock.style.opacity = '0'
+    LeftPaper.style.opacity = '0'
+    LeftScissor.style.opacity = '0'
+
+    drawSymbol.style.opacity = 0
+    userWonSymbol.style.opacity = 0
+    userLostSymbol.style.opacity = 0
+
+    RightRock.style.opacity = '0'
+    RightPaper.style.opacity = '0'
+    RightScissor.style.opacity = '0'
+    updateScores()
+})
