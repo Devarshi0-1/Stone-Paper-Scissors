@@ -4,32 +4,61 @@
     font-family: 'Poppins', sans-serif;
 }
 
-@keyframes headingAnimation {
-    0% {
-        transform: translate(0%, -300%) rotate(180deg);
-        letter-spacing: .01em;
-    }
-
-    80% {
-        transform: translate(0%, 50%);
-        letter-spacing: 0.5em;
-    }
-
-    100% {
-        transform: translate(0%, 0%) rotate(0deg);
-        letter-spacing: 0.1em;
-    }
-}
-
 body {
     height: 100vh;
     width: 100vw;
-    background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+    background-image: linear-gradient(45deg, #12c2e9,#c471ed,#f64f59, #3E065F, #700B97, #8E05C2);
+    background-size: 500%;
+    transition: background-position 500ms;
+    background-position: bottom left;
+}
+
+[data-colorswitch="true"]{
+    transition: color 500ms;
+}
+
+.colorMode {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: #555;
+    border: 2px solid #edf1f4;
+    cursor: pointer;
+    transition: background-image 500ms;
+    overflow: hidden;
+}
+
+.colorModeToggle {
+    background-color: #eee;
+    border: 2px solid #333;
+}
+
+.colorModeSlider {
+    height: 40px;
+    width: 110px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: transform 500ms ease-out;
+    transform: translate(-10px, -1px);
+    user-select: none;
+    background-color: transparent;
+}
+
+.topIcons {
+    height: 35px;
+}
+
+.colorModeToggle.colorModeSlider {
+    transform: translate(-61px, -2px);
 }
 
 .container {
     flex-direction: column;
-    height: 72vh;
+    height: 77vh;
     width: 75vw;
     border-radius: 10px;
     padding: 0 0 20px 0;
@@ -37,40 +66,23 @@ body {
 }
 
 .top {
-    height: 24vh;
+    height: 20vh;
     width: 100%;
-    flex-direction: column;
 }
 
 #heading {
-    position: relative;
-    animation: headingAnimation 2s ease-in-out forwards;
-    font-size: 4em;
-    color: rgb(0, 0, 0, 0.7);
+    font-size: 3em;
+    color: black;
     letter-spacing: 0.1em;
-    border: 2px solid rgba(0, 0, 0, 0.397);
-    border-radius: 15px;
-    padding: 10px;
-    margin: 10px;
-}
-
-#chances {
-    position: relative;
-    letter-spacing: 0.1em;
-    color: rgb(0, 0, 0, 0.7);
-    border: 2px solid rgba(0, 0, 0, 0.397);
-    animation: 2s ease-in-out forwards;
-    border-radius: 15px;
-    font-size: 2em;
-    padding: 10px;
-    opacity: 0;
+    padding: 2px 5px;
+    background-color: rgba(255, 255, 255, 0.167);
+    text-align: center;
 }
 
 .middle {
     width: 100%;
     height: 24vh;
     font-size: 10rem;
-    color: rgba(255, 255, 255, 0.705);
 }
 
 .middleIcons {
@@ -81,6 +93,7 @@ body {
     transition: opacity 200ms;
     opacity: 0;
 }
+
 
 .left {
     width: 24vw;
@@ -120,6 +133,7 @@ body {
     user-select: none;
     fill: #F473B9;
     filter: drop-shadow(5px 5px 10px black);
+    user-select: none;
     transition: fill 100ms, transform 200ms;
 }
 
@@ -148,6 +162,17 @@ body {
     font-size: 2rem;
     background-color: transparent;
     cursor: pointer;
+}
+
+body.dark{
+    background-position: top right;
+}
+
+.dark#heading,
+.dark#YourScore,
+.dark#reset,
+.dark#ComScore {
+    color: white;
 }
 
 .flex-center {

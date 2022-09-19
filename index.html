@@ -15,10 +15,15 @@
 </head>
 
 <body class="flex-center">
+    <div class="colorMode">
+        <div class="colorModeSlider">
+            <img class="topIcons" src="./img/moon.svg" alt="Moon image">
+            <img class="topIcons" src="./img/sun.svg" alt="Sun image">
+        </div>
+    </div>
     <div class="container flex-center">
-        <div class="top flex-center">
-            <h1 id="heading">Start</h1>
-            <h1 id="chances">Chance</h1>
+        <div class="top">
+            <h1 id="heading" data-colorswitch='true'">Rock Paper Scissors</h1>
         </div>
         <div class="middle flex-center">
             <div class="left flex-center">
@@ -81,9 +86,9 @@
             </div>
         </div>
         <div class="footer flex-center">
-            <div class="flex-center" id="YourScore">Your Score</div>
-            <button id="reset" type="button">Reset</button>
-            <div class="flex-center" id="ComScore">Comp Score</div>
+            <div class="flex-center" id="YourScore" data-colorswitch='true'">Your Score</div>
+            <button id="reset" type="button" data-colorswitch='true'">Reset</button>
+            <div class="flex-center" id="ComScore" data-colorswitch='true'">Comp Score</div>
         </div>
     </div>
     

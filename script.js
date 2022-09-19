@@ -1,9 +1,18 @@
+const body = document.body
+const colorModeBtn = document.querySelector('.colorMode');
+const colorModeSlider = document.querySelector('.colorModeSlider');
 const mainBtns = [...document.querySelectorAll('.bottomIcons')]
-const computerIcons = [...document.querySelectorAll('.rightIcons')]
 const userIcons = [...document.querySelectorAll('.leftIcons')]
+const computerIcons = [...document.querySelectorAll('.rightIcons')]
 const resetBtn = document.querySelector('#reset ')
 let userScore = 0
 let compScore = 0
+
+if (localStorage.getItem('currentMode') !== null && localStorage.getItem('currentMode').includes('colorModeToggle')) {
+    modeSwitch()
+}
+
+colorModeBtn.addEventListener('click', modeSwitch)
 
 mainBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -13,7 +22,6 @@ mainBtns.forEach(btn => {
         whoWon(userSelection, compSelection)
     })
 });
-
 
 const LeftRock = document.querySelector('.leftIcons:nth-child(1)')
 const LeftPaper = document.querySelector('.leftIcons:nth-child(2)')
@@ -136,3 +144,14 @@ resetBtn.addEventListener('click', () => {
     RightScissor.style.opacity = '0'
     updateScores()
 })
+
+function modeSwitch() {
+    const switchingElementFontColor = [...document.querySelectorAll('[data-colorswitch="true"]')]
+    body.classList.toggle('dark')
+    switchingElementFontColor.forEach(element => {
+        element.classList.toggle('dark')
+    })
+    colorModeBtn.classList.toggle('colorModeToggle')
+    colorModeSlider.classList.toggle('colorModeToggle')
+    localStorage.setItem("currentMode", colorModeBtn.classList)
+}
