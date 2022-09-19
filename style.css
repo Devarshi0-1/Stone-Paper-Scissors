@@ -62,6 +62,7 @@ body {
     width: 75vw;
     border-radius: 10px;
     padding: 0 0 20px 0;
+    backdrop-filter: blur(10px);
     box-shadow: 0 0 100px rgba(0, 0, 0, 0.265);
 }
 
@@ -93,7 +94,6 @@ body {
     transition: opacity 200ms;
     opacity: 0;
 }
-
 
 .left {
     width: 24vw;
@@ -177,6 +177,26 @@ body.dark {
 
 .dark#reset {
     border-color: white;
+}
+
+.circles{
+    position: absolute;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: rgba(0, 69, 119, 0.226);
+}
+
+#circle1{
+    top: 200px;
+    left: 100px;
+    width: 300px;
+}
+
+#circle2{
+    bottom: 200px;
+    right: 150px;
+    width: 200px;
 }
 
 .flex-center {
