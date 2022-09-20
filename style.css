@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     width: 100vw;
-    background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59, #3E065F, #700B97, #8E05C2);
+    background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59, #0D324D, #700B97, #7F5A83);
     background-size: 500%;
     transition: background-position 500ms;
     background-position: bottom left;
