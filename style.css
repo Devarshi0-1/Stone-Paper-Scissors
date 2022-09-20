@@ -195,8 +195,12 @@ body.dark {
     aspect-ratio: 1;
     border-radius: 50%;
     z-index: -1;
-    background-color: rgba(0, 69, 119, 0.226);
+    background-color: rgba(0, 69, 119, 0.2);
     transition: top 500ms ease-in-out, bottom 500ms ease-in-out;
+}
+
+.dark.circles{
+    background-color:rgba(244, 115, 186, 0.4);
 }
 
 #circle1 {
