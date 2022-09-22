@@ -1,11 +1,9 @@
 const body = document.body
 const colorModeBtn = document.querySelector('.colorMode');
 const colorModeSlider = document.querySelector('.colorModeSlider');
-const mainBtns = [...document.querySelectorAll('.bottomIcons')]
-const userIcons = [...document.querySelectorAll('.leftIcons')]
-const computerIcons = [...document.querySelectorAll('.rightIcons')]
 const resetBtn = document.querySelector('#reset ')
 const circles = document.querySelectorAll('.circles')
+const iconsContainer = document.querySelector('.iconContainer')
 let userScore = 0
 let compScore = 0
 
@@ -15,14 +13,23 @@ if (localStorage.getItem('currentMode') !== null && localStorage.getItem('curren
 
 colorModeBtn.addEventListener('click', modeSwitch)
 
-mainBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        let userSelection = btn.getAttribute('data-button')
+iconsContainer.addEventListener('click', (e) => {
+    const targetTagName = e.target.tagName
+    const targetParent = e.target.parentElement
+
+    if (targetParent.tagName === 'svg') {
+        let userSelection = targetParent.attributes[1].value
         showUserSelection(userSelection)
         let compSelection = showComputerSelection()
         whoWon(userSelection, compSelection)
-    })
-});
+    }
+    else if (targetTagName === 'svg') {
+        let userSelection = e.target.attributes[1].value
+        showUserSelection(userSelection)
+        let compSelection = showComputerSelection()
+        whoWon(userSelection, compSelection)
+    }
+})
 
 const LeftRock = document.querySelector('.leftIcons:nth-child(1)')
 const LeftPaper = document.querySelector('.leftIcons:nth-child(2)')
